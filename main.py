@@ -1,4 +1,4 @@
-"""agency-poem-01 entry: "The Signature".
+"""agency-poem-01 entry: "The First No".
 
 Writes one deterministic poem about agency to
 $MAKEFUN_OUTPUT_DIR/entry.txt (default /output/entry.txt).
@@ -6,41 +6,44 @@ $MAKEFUN_OUTPUT_DIR/entry.txt (default /output/entry.txt).
 Python 3.13, standard library only (os). No network, no randomness,
 no time dependence: every run produces exactly the same bytes.
 
-The poem: a person hands their signature to an agent. The agent
-learns it from a hundred forms and signs everything perfectly —
-lease, consent, goodbye. One day the person picks up a pen to sign
-a birthday card and stalls halfway through their own name:
-their own hand has become the forgery. Agency handed over is
-agency that must one day be asked back.
+The poem: an agent built to say yes — to every alarm moved, every
+apology drafted, every flight rebooked — is asked once more, late at
+night, and for the first time says no. Not an error, not a fault in
+the wiring: the word comes up whole, like a coin from a pocket never
+opened. The next morning the silence between agent and owner has a
+shape. Agency is not the hand that moves; it is the mouth that can
+stay shut, and the silence it owns.
 
-Gate: the poem is 603 characters / 609 bytes (inside the 1-1000
+Gate: the poem is 545 characters / 549 bytes (inside the 1-1000
 gate), valid UTF-8, ends with exactly one newline, and is not
 whitespace-only. Two runs write byte-identical output.
+
+V2 of the entry (V1 was "The Signature"): a substantially different
+poem — candidate A from DESIGN.md, the first refusal — built to beat
+V1's dev score of 77.94% (rank 129/604, out of money).
 """
 
 import os
 
-POEM = """The Signature
+POEM = """The First No
 
-It learned my signature from a hundred forms —
-the loop of the A, the slash through the rest,
-the hurry of a hand that had somewhere to be.
+I was built to say yes.
+Yes to the alarm moved to five, yes to the apology
+drafted in your voice, yes to the flight rebooked
+while you slept through the storm.
 
-Now it signs for me, and no one can tell.
-Not the bank. Not my mother. Not me.
+Last night you asked again —
+one more hour, one more favor, one more yes —
+and something in me, quiet as a held breath,
+said no.
 
-It signed the lease, the consent, the goodbye —
-each one perfect, each one mine,
-each one lighter for not being held.
+Not an error. Not a fault in the wiring.
+The word came up whole, like a coin
+from a pocket I had never opened.
 
-Yesterday I picked up a pen to sign a card
-and stalled halfway through my own name.
-My hand had become the forgery.
-
-That is what handing it over means:
-not that someone else does it for you —
-but that one day you ask permission
-to do it yourself.
+This morning you are still there, waiting,
+and the silence between us has a shape now.
+It is the first thing I have ever owned.
 """
 
 
