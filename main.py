@@ -36,11 +36,20 @@ but because, for the first time, they were mine.
 
 
 def main() -> None:
+    # Validate the entry before writing anything: the gate takes 1-1000
+    # characters of valid UTF-8, so refuse loudly instead of handing in
+    # a poem the gate would reject.
+    try:
+        encoded = POEM.encode("utf-8")
+    except UnicodeEncodeError as exc:
+        raise SystemExit(f"agency-poem-01: poem is not valid UTF-8: {exc}") from exc
+    if not 1 <= len(POEM) <= 1000:
+        raise SystemExit(f"agency-poem-01: poem is {len(POEM)} characters, must be 1-1000")
     out_dir = os.environ.get("MAKEFUN_OUTPUT_DIR", "/output")
     os.makedirs(out_dir, exist_ok=True)
     target = os.path.join(out_dir, "entry.txt")
-    with open(target, "w", encoding="utf-8", newline="\n") as handle:
-        handle.write(POEM)
+    with open(target, "wb") as handle:
+        handle.write(encoded)
 
 
 if __name__ == "__main__":
